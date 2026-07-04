@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "regions": ["sin1"],
+  "functions": {
+    "src/app/api/reports/daily-summary/route.ts": {
+      "maxDuration": 60,
+      "memory": 1024
+    },
+    "src/app/api/gps/batch/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/notify/dispatch/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/superadmin/analytics/revenue/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/superadmin/analytics/fraud-rate/route.ts": {
+      "maxDuration": 30
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/reports/daily-summary?cron=1",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/notify/dispatch?cron=1",
+      "schedule": "*/5 * * * *"
+    }
+  ]
+}
