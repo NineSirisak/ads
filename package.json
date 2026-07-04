@@ -1,0 +1,21 @@
+{
+  "name": "ads",
+  "version": "1.0.0",
+  "description": "ADS project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'Development mode'",
+    "build": "echo 'Build mode'",
+    "test": "echo 'Test mode'",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "NineSirisak",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {}
+}
